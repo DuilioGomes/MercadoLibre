@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Most Expensive</title>
 </head>
 <body>
     <table>
         <tr class="first-table-row">
+            <th></th>
             <th>Title</th>
             <th>Price</th>
             <th>Link</th>
         </tr>
         {% for item in result.list_items %}
             <tr>
-               <td>{{item.title}}</td>
-               <td>{{item.price}}</td>
-               <td><a href="{{item.link}}">link</a></td>
+                <td>{{ forloop.counter }}#</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.price }}</td>
+                <td><a href="{{ item.link }}">link</a></td>
             </tr>
         {% endfor %}
     </table>

@@ -19,6 +19,14 @@ For start server use the command
 python manage.py runserver
 ```
 
+## Run Test
+For running tests use the command
+
+```sh
+python manage.py test
+```
+
+
 ## Navigation
 By default, the project will run in http://127.0.0.1:8000/
 
