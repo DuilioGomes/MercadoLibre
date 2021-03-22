@@ -1,3 +1,14 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .calls import get_publications_category
+from .normalize import normalize_most_expensive
+
+
+def biggest_sellers(request):
+    return render(request, "biggest_sellers.html", {})
+
+
+def most_expensive(request):
+    response = get_publications_category("MLA420040", sort="price_desc", limit="25")
+    normalize_data = normalize_most_expensive(response.json())
+    return render(request, "most_expensive.html", {'result': {"list_items": normalize_data}})
